@@ -1,64 +1,64 @@
 export class Reino{
 
     //Atributos
-    nombre;
-    casas;
-    rey;
+    #nombre;
+    #casas;
+    #rey;
 
     //Constructor parametrizado
     constructor(nombre,rey){
-        this.nombre=nombre;
-        this.casas=[];
-        this.rey=rey;
+        this.#nombre=nombre;
+        this.#casas=[];
+        this.#rey=rey;
     }
 
-    //Metodo de añadir casa, nada simplemente comprueba si no hay duplicados con la variable existe y lo meto en el array
+    //Metodo de añadir casa
     añadir_casa(casa){
-        let existe=this.casas.some(c=>c.nombre===casa.nombre);
+        let existe=this.#casas.some(c=>c.getNombre()===casa.getNombre());
         if(!existe){
-            this.casas.push(casa);
-            console.log("La Casa "+casa.nombre+" ha sido añadido al Reino de "+this.nombre);
+            this.#casas.push(casa);
+            console.log("La Casa "+casa.getNombre()+" ha sido añadido al Reino de "+this.#nombre);
         }
     }
 
-    //Metodo que lista todas las casas de un reino 
+    //Metodo que lista todas las casas de un reino
     mostrar_casas(){
-        console.log("Casas del Reino de "+this.nombre+":");
-        for(let casa of this.casas){
-            console.log("- Casa "+casa.nombre);
+        console.log("Casas del Reino de "+this.#nombre+":");
+        for(let casa of this.#casas){
+            console.log("- Casa "+casa.getNombre());
         }
     }
 
-    //Metodo que muestra informacion del rey de el Reino
+    //Metodo que muestra informacion del rey del Reino
     mostrar_info_rey(){
         console.log("Rey actual:");
-        console.log("El rey actual es "+this.rey.nombre+" de la Casa "+this.nombre);
+        console.log("El rey actual es "+this.#rey.getNombre()+" de la Casa "+this.#rey.getCasa().getNombre());
     }
 
     //Metodo que proclamara rey al rey que le pasemos por parametro
     proclamar_rey(rey) {
-        this.rey = rey;
-        console.log(rey.nombre+" ha sido proclamado rey de "+this.nombre);
+        this.#rey=rey;
+        console.log(rey.getNombre()+" ha sido proclamado rey de "+this.#nombre);
     }
 
-    //Getters and Setters
+    //Getters y Setters
     getNombre(){
-        return this.nombre;
+        return this.#nombre;
     }
     setNombre(nombre){
-        this.nombre=nombre;
+        this.#nombre=nombre;
     }
     getCasas(){
-        return casas;
+        return this.#casas;
     }
     setCasas(casas){
-        this.casas=casas;
+        this.#casas=casas;
     }
     getRey(){
-        return rey;
+        return this.#rey;
     }
     setRey(rey){
-        this.rey=rey;
+        this.#rey=rey;
     }
 
 }

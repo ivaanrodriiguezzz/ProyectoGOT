@@ -1,40 +1,40 @@
 export class Arma{
 
     //Atributos
-    nombre; 
-    daño; 
-    tipo; 
+    #nombre;
+    #danio;
+    #tipo;
 
-    //Constructor parametrixado
-    constructor(nombre,daño,tipo){
-        this.nombre=nombre;
-        this.daño=daño;
-        this.tipo=tipo;
+    //Constructor parametrizado
+    constructor(nombre,danio,tipo){
+        this.#nombre=nombre;
+        this.#danio=danio;
+        this.#tipo=tipo;
     }
 
-    //Descripcion de cada arma mostrando el nombre tipo y daño
+    //Descripcion de cada arma mostrando el nombre tipo y danio
     descripcion(){
-        console.log(this.nombre + "("+this.tipo+") - daño: "+this.daño);
+        console.log(this.#nombre+"("+this.#tipo+") - daño: "+this.#danio);
     }
 
     //Getters y Setters
-    getNombre() {
-        return this.nombre;
+    getNombre(){
+        return this.#nombre;
     }
-    setNombre(nombre) {
-        this.nombre = nombre;
+    setNombre(nombre){
+        this.#nombre=nombre;
     }
-    getDaño() {
-        return this.daño;
+    getdanio(){
+        return this.#danio;
     }
-    setDaño(daño) {
-        this.daño = daño;
+    setdanio(danio){
+        this.#danio=danio;
     }
-    getTipo() {
-        return this.tipo;
+    getTipo(){
+        return this.#tipo;
     }
-    setTipo(tipo) {
-        this.tipo = tipo;
+    setTipo(tipo){
+        this.#tipo=tipo;
     }
 
 }
